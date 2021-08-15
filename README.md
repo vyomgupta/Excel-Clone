@@ -18,6 +18,5 @@ Built an excel clone using javascript,jquery,html,css supporting all of its basi
 8. Implemented cycle detection( Using directed- graph data structure) for each cell to prevent the cell to create the cycle.
 9. Clean and Responsive UI
 
-Demo : http://excel-clonee.surge.sh/
 
-Project video : https://www.linkedin.com/posts/shivanidogra_hi-everyone-i-have-built-an-excel-clone-activity-6804051320883027968-tUyi
+
