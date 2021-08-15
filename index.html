@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Clone</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css" />
+    <!-- <script src="https://kit.fontawesome.com/dc14601fdf.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <span id="name">Book1 - Excel</span>
+            <span id="file_status">(saved)</span>
+        </div>
+        <div class="menubar">
+            <div class="menuBarItem file"> File </div>
+            <div class="menuBarItem selected_menu"> Home </div>
+            <div class="menuBarItem"> Insert </div>
+            <div class="menuBarItem"> Page Layout </div>
+            <div class="menuBarItem"> Formula </div>
+        </div>
+        <div class="menuIconBar">
+            <div id="cut_copy" name="cut" class="menu_icon">
+                <svg class="icon icon-scissors" viewBox="0 0 32 32">
+                    <path d="M21.5 20.988c1.934 0 3.5 2.016 3.5 4.5 0 2.486-1.566 4.5-3.5 4.5s-3.5-2.014-3.5-4.5c0-1.498 0.576-2.816 1.452-3.635l-3.452-4.955-3.453 4.955c0.877 0.819 1.453 2.137 1.453 3.635 0 2.486-1.567 4.5-3.5 4.5s-3.5-2.014-3.5-4.5c0-2.484 1.567-4.5 3.5-4.5 0.199 0 0.392 0.035 0.582 0.076l3.475-6.238-3.631-5.212c-2.961-5.129-0.62-7.604-0.62-7.604l5.694 10.225 5.694-10.224c0 0 2.341 2.475-0.62 7.604l-3.631 5.212 3.475 6.238c0.189-0.042 0.383-0.077 0.582-0.077zM10.5 22.969c-1.104 0-2 1.119-2 2.5s0.896 2.5 2 2.5 2-1.119 2-2.5-0.896-2.5-2-2.5zM16 14.073c-0.552 0-1 0.447-1 1 0 0.552 0.448 1 1 1 0.553 0 1-0.448 1-1 0-0.553-0.447-1-1-1zM19.5 25.469c0 1.381 0.896 2.5 2 2.5s2-1.119 2-2.5-0.896-2.5-2-2.5-2 1.119-2 2.5z">
+                    </path>
+                </svg>
+            </div>
+            <div id="cut_copy" name="copy" class="menu_icon">
+                <svg class="icon icon-copy" viewBox="0 0 32 32">
+                    <path d="M20 8v-8h-14l-6 6v18h12v8h20v-24h-12zM6 2.828v3.172h-3.172l3.172-3.172zM2 22v-14h6v-6h10v6l-6 6v8h-10zM18 10.828v3.172h-3.172l3.172-3.172zM30 30h-16v-14h6v-6h10v20z">
+                    </path>
+                </svg>
+            </div>
+            <div name="paste" class="menu_icon">
+                <svg class="icon icon-clipboard" viewBox="0 0 32 32">
+                    <path d="M24 32.041h-18c-1.105 0-2-0.893-2-1.996v-24.097c0-1.102 0.895-1.995 2-1.995h5v2.079h-4c-0.552 0-1 0.446-1 0.998v22.017c0 0.553 0.448 0.998 1 0.998h16c0.553 0 1-0.445 1-0.998v-22.017c0-0.552-0.447-0.998-1-0.998h-4v-2.079h5c1.104 0 2 0.894 2 1.995v24.097c0 1.103-0.896 1.996-2 1.996zM11 12.019h11v0.998h-11v-0.998zM11 15.013h11v0.998h-11v-0.998zM11 18.008h11v0.998h-11v-0.998zM11 21.002h11v0.998h-11v-0.998zM22 27.986h-11v-0.996h11v0.996zM11 23.996h11v0.998h-11v-0.998zM8 11.999h1v0.998h-1v-0.998zM8 14.993h1v0.998h-1v-0.998zM8 17.986h1v0.998h-1v-0.998zM8 20.98h1v0.998h-1v-0.998zM9 27.967h-1v-0.998h1v0.998zM8 23.975h1v0.998h-1v-0.998zM21 7.091c0.553 0 1 0.447 1 0.999s0 1.933 0 1.933h-14c0 0 0-1.382 0-1.933s0.447-0.999 1-0.999h3c0 0 0.012-1.419 0.012-3.041 0-1.684 1.3-3.092 2.988-3.092s3.033 1.48 3.033 3.102c0 1.747-0.033 3.031-0.033 3.031h3zM15 3.953c-0.553 0-1 0.446-1 0.997 0 0.552 0.447 0.998 1 0.998s1-0.446 1-0.998c0-0.551-0.447-0.997-1-0.997z">
+                    </path>
+                </svg>
+            </div>
+            <select id="fontFamily" value="Noto Sans" name="menu_selector" class="menu_selector">
+                <option style="font-family:Noto Sans" value="Noto Sans">Noto Sans</option>
+                <option style="font-family:Arial" value="Arial">Arial</option>
+                <option style="font-family:Calibri" value="Calibri">Calibri</option>
+                <option style="font-family:Comic Sans MS" value="Comic Sans MS">Comic Sans MS</option>
+                <option style="font-family:Courier New" value="Courier New">Courier New</option>
+                <option style="font-family:Impact" value="Impact">Impact</option>
+                <option style="font-family:Georgia" value="Georgia">Georgia</option>
+                <option style="font-family:Garamond" value="Garamond">Garamond</option>
+                <option style="font-family:Lato" value="Lato">Lato</option>
+                <option style="font-family:Open Sans" value="Open Sans">Open Sans</option>
+                <option style="font-family:Palatino" value="Palatino">Palatino</option>
+                <option style="font-family:Verdana" value="Verdana">Verdana</option>
+            </select>
+            <select id="fontSize" name="menu_selector" value="1.2" class="menu_selector font">
+                <option value="1">10</option>
+                <option value="1.2">12</option>
+                <option value="1.4">14</option>
+                <option value="1.6">16</option>
+                <option value="1.8">18</option>
+                <option value="2">20</option>
+                <option value="3.6">36</option>
+                <option value="4.8">48</option>
+                <option value="7.2">72</option>
+            </select>
+            <div id="font_style" data="bold" class="menu_icon">
+                <svg class="icon icon-bold" viewBox="0 0 22 28">
+                    <path d="M8.672 23.766c0.688 0.297 1.437 0.5 2.188 0.5 3.563 0 5.875-1.422 5.875-5.234 0-0.969-0.125-1.984-0.641-2.812-1.453-2.344-3.547-2.469-6.062-2.469-0.469 0-1.141 0-1.578 0.156 0 1.656-0.016 3.313-0.016 4.953 0 1.078-0.141 4 0.234 4.906zM8.453 12.109c0.562 0.094 1.141 0.109 1.703 0.109 3.219 0 5.516-0.906 5.516-4.516 0-3.047-2.703-4.094-5.313-4.094-0.688 0-1.359 0.094-2.031 0.203 0 1.578 0.125 3.156 0.125 4.734 0 0.828-0.016 1.656-0.016 2.484 0 0.359 0 0.719 0.016 1.078zM0 26l0.031-1.469c1-0.25 2.016-0.266 2.984-0.672 0.547-0.922 0.469-2.547 0.469-3.594 0-0.344 0.031-15.281-0.344-16.016-0.234-0.453-2.531-0.562-3.047-0.625l-0.063-1.297c3.719-0.063 7.438-0.328 11.141-0.328 0.703 0 1.422 0.016 2.125 0.016 3.531 0 7.422 1.687 7.422 5.75 0 2.797-2.125 3.844-4.328 4.844 2.969 0.672 5.609 2.688 5.609 5.969 0 5.375-4.891 7.156-9.469 7.156-1.375 0-2.75-0.094-4.125-0.094-2.797 0-5.625 0.25-8.406 0.359z">
+                    </path>
+                </svg>
+            </div>
+            <div id="font_style" data="italic" class="menu_icon">
+                <svg class="icon icon-italic" viewBox="0 0 16 28">
+                    <path d="M0 25.969l0.266-1.328c1-0.313 2.078-0.438 3.016-0.922 0.359-0.453 0.531-1.031 0.641-1.578 0.203-1.062 3.609-16.391 3.563-17.641v-0.391c-0.859-0.469-1.906-0.344-2.844-0.5l0.297-1.609c2.016 0.094 4.062 0.25 6.094 0.25 1.656 0 3.313-0.156 4.969-0.25-0.063 0.469-0.172 0.938-0.297 1.391-1.078 0.375-2.219 0.547-3.281 0.969-0.344 0.844-0.422 1.766-0.578 2.656-0.75 4.047-1.75 8.094-2.578 12.109-0.156 0.75-0.922 3.859-0.859 4.516l0.016 0.281c0.953 0.219 1.922 0.328 2.891 0.484-0.031 0.516-0.125 1.031-0.25 1.547-0.344 0-0.672 0.047-1.016 0.047-0.891 0-1.813-0.297-2.703-0.313-1.078-0.016-2.156-0.031-3.219-0.031-1.391 0-2.75 0.234-4.125 0.313z">
+                    </path>
+                </svg>
+            </div>
+            <div id="font_style" data="underline" class="menu_icon">
+                <svg class="icon icon-underline" viewBox="0 0 24 28">
+                    <path d="M0.75 3.484c-0.281-0.016-0.516-0.016-0.703-0.063l-0.047-1.375c0.203-0.016 0.406-0.016 0.625-0.016 0.547 0 1.141 0.016 1.75 0.063 1.469 0.078 2.344 0.109 2.594 0.109 0.891 0 1.766-0.016 2.625-0.047 0.844-0.031 1.609-0.063 2.281-0.078 0.656 0 1.109-0.016 1.344-0.031l-0.016 0.219 0.031 1v0.141c-0.625 0.094-1.266 0.141-1.937 0.141-0.625 0-1.031 0.125-1.234 0.391-0.141 0.156-0.203 0.844-0.203 2.063 0 0.375 0.016 0.672 0.016 0.906l0.016 3.578 0.219 4.375c0.063 1.266 0.313 2.312 0.797 3.156 0.359 0.609 0.859 1.094 1.5 1.437 0.938 0.5 1.859 0.734 2.766 0.734 1.062 0 2.063-0.141 2.984-0.438 0.547-0.172 1.062-0.422 1.547-0.797 0.484-0.359 0.828-0.688 1.016-1 0.406-0.625 0.672-1.234 0.828-1.781 0.219-0.766 0.328-1.953 0.328-3.578 0-2.797-0.203-2.875-0.438-6.406l-0.063-0.922c-0.047-0.672-0.156-1.141-0.375-1.375-0.344-0.359-0.75-0.547-1.203-0.531l-1.563 0.031-0.219-0.047 0.031-1.344h1.313l3.203 0.156c1.062 0.047 2.078-0.047 3.063-0.156l0.281 0.031c0.063 0.391 0.094 0.656 0.094 0.797s-0.031 0.297-0.063 0.484c-0.422 0.109-0.859 0.187-1.313 0.203-0.734 0.109-1.156 0.187-1.234 0.266-0.141 0.141-0.234 0.344-0.234 0.641 0 0.203 0.031 0.516 0.047 0.906 0 0 0.125 0.281 0.344 6.188 0.078 2.359-0.078 3.953-0.234 4.75s-0.375 1.437-0.641 1.906c-0.406 0.688-1 1.328-1.75 1.922-0.766 0.578-1.703 1.047-2.844 1.391s-2.469 0.516-3.984 0.516c-1.719 0-3.203-0.234-4.438-0.719s-2.172-1.125-2.797-1.906-1.062-1.797-1.297-3.047c-0.172-0.859-0.25-2.094-0.25-3.703v-5.203c0-1.969-0.094-3.078-0.266-3.328-0.25-0.359-1.016-0.578-2.297-0.609zM24 25.5v-1c0-0.281-0.219-0.5-0.5-0.5h-23c-0.281 0-0.5 0.219-0.5 0.5v1c0 0.281 0.219 0.5 0.5 0.5h23c0.281 0 0.5-0.219 0.5-0.5z">
+                    </path>
+                </svg>
+            </div>
+            <div class="menu_icon">
+                <div class="bg_color_picker"></div>
+                <svg name="backgroundColor" class="icon icon-format_color_fill" viewBox="0 0 24 24">
+                    <path d="M0 20.016h24v3.984h-24v-3.984zM18.984 11.484q2.016 2.203 2.016 3.516 0 0.797-0.609 1.406t-1.406 0.609-1.383-0.609-0.586-1.406q0-0.563 0.492-1.453t0.961-1.453zM5.203 9.984h9.609l-4.828-4.781zM16.547 8.953q0.469 0.469 0.469 1.078t-0.469 1.031l-5.484 5.484q-0.469 0.469-1.078 0.469-0.563 0-1.031-0.469l-5.531-5.484q-0.422-0.422-0.422-1.078 0-0.609 0.422-1.031l5.156-5.156-2.391-2.391 1.453-1.406z">
+                    </path>
+                </svg>
+            </div>
+            <div class="menu_icon">
+                <div class="text_color_picker"></div>
+                <svg name="color" class="icon icon-format_color_text" viewBox="0 0 24 24">
+                    <path d="M9.609 12h4.781l-2.391-6.328zM11.016 3h1.969l5.484 14.016h-2.25l-1.078-3h-6.281l-1.125 3h-2.25zM0 20.016h24v3.984h-24v-3.984z">
+                    </path>
+                </svg>
+            </div>
+            <div data="left" class="menu_icon alignment icon_selected">
+                <svg class="icon icon-format_align_left " viewBox="0 0 24 24">
+                    <path d="M3 3h18v2.016h-18v-2.016zM3 21v-2.016h18v2.016h-18zM3 12.984v-1.969h18v1.969h-18zM15 6.984v2.016h-12v-2.016h12zM15 15v2.016h-12v-2.016h12z">
+                    </path>
+                </svg>
+            </div>
+            <div data="center" class="menu_icon alignment">
+                <svg class="icon icon-format_align_justify" viewBox="0 0 24 24">
+                    <path d="M3 3h18v2.016h-18v-2.016zM3 9v-2.016h18v2.016h-18zM3 12.984v-1.969h18v1.969h-18zM3 17.016v-2.016h18v2.016h-18zM3 21v-2.016h18v2.016h-18z">
+                    </path>
+                </svg>
+            </div>
+            <div data="right" class="menu_icon alignment">
+                <svg class="icon icon-format_align_right" viewBox="0 0 24 24">
+                    <path d="M3 3h18v2.016h-18v-2.016zM9 9v-2.016h12v2.016h-12zM3 12.984v-1.969h18v1.969h-18zM9 17.016v-2.016h12v2.016h-12zM3 21v-2.016h18v2.016h-18z">
+                    </path>
+                </svg>
+            </div>
+        </div>
+        <div class="formulaBar">
+            <div class="selected_cell" contenteditable="true">A1</div>
+            <div class="formula_sign">
+                <svg class="icon" focusable="false" viewBox="0,0,2048,2048" style="height: 1.5rem; width: 1.5rem;">
+                    <title>Insert Function</title>
+                    <path type="path" class="OfficeIconColors_HighContrast" d="M 1198 639 h -194 l -126 511 q -62 249 -133 421 q -71 171 -150 277 q -79 106 -164 153 q -85 47 -175 47 q -30 0 -60 -9 q -30 -9 -54 -26 q -24 -17 -39 -42 q -15 -25 -15 -57 q 0 -22 10 -42 q 9 -21 26 -36 q 16 -15 38 -24 q 22 -9 46 -9 q 19 0 36 7 q 17 7 30 19 q 13 12 21 28 q 7 15 7 32 q 0 36 -30 63 q 33 0 66 -13 q 33 -14 64 -45 q 31 -31 59 -81 q 28 -50 51 -123 q 1 -8 6 -26 q 5 -18 15 -52 q 10 -34 25 -87 q 14 -53 34 -131 l 191 -755 h -217 l 26 -122 h 53 q 53 0 79 -3 q 26 -4 37 -8 q 7 -3 21 -9 q 13 -6 30 -18 q 16 -12 34 -31 q 17 -20 32 -50 q 33 -65 62 -113 q 29 -49 59 -85 q 86 -103 180 -151 q 93 -49 176 -49 q 45 0 82 14 q 37 14 64 36 q 26 22 41 50 q 14 28 14 56 q 0 24 -8 45 q -9 21 -24 37 q -15 15 -36 24 q -21 9 -46 9 q -44 0 -72 -26 q -29 -27 -29 -65 q 0 -12 5 -23 q 4 -11 9 -20 q 5 -10 10 -19 q 4 -9 4 -16 q -7 -5 -24 -5 q -70 0 -126 54 q -56 54 -101 151 q -6 13 -13 27 q -7 14 -16 37 q -10 23 -22 59 q -13 36 -30 92 h 195 m 488 514 q -49 40 -119 160 q 19 80 33 137 q 13 56 23 96 q 9 39 15 64 q 6 24 11 39 q 4 14 8 21 q 3 7 7 11 q 7 0 20 -10 q 13 -11 29 -29 q 15 -19 32 -43 q 17 -25 32 -52 l 76 39 q -26 50 -59 95 q -33 44 -68 78 q -35 34 -68 54 q -34 20 -61 20 q -22 0 -50 -13 q -28 -13 -51 -56 q -3 -5 -7 -17 q -4 -12 -11 -38 q -8 -27 -19 -70 q -11 -44 -27 -112 q -54 89 -97 148 q -43 59 -79 94 q -37 35 -69 50 q -33 14 -65 14 q -20 0 -39 -7 q -20 -7 -36 -20 q -17 -13 -27 -32 q -10 -19 -10 -44 q 0 -38 26 -65 q 26 -28 64 -28 q 17 0 30 6 q 12 5 23 13 q 11 7 22 16 q 10 8 23 13 q 30 -25 60 -62 q 29 -37 56 -77 q 27 -41 50 -81 q 22 -41 38 -73 q -18 -70 -28 -111 q -11 -42 -17 -64 q -6 -23 -8 -30 q -3 -8 -3 -9 q -9 -25 -19 -42 q -10 -17 -24 -27 q -14 -10 -34 -14 q -20 -4 -50 -4 q -9 0 -23 1 q -14 0 -46 2 v -80 l 269 -47 q 25 27 42 47 q 16 19 28 41 q 12 22 23 53 q 10 31 24 82 l 46 -69 q 22 -34 51 -62 q 29 -28 59 -48 q 29 -20 58 -31 q 28 -12 49 -12 q 47 0 79 27 q 31 27 31 68 q 0 27 -8 45 q -9 17 -23 28 q -14 11 -31 16 q -17 4 -33 4 q -13 0 -25 -3 q -12 -4 -23 -8 q -12 -4 -23 -7 q -12 -4 -24 -4 q -2 0 -10 3 q -8 3 -23 16 z">
+                    </path>
+                    <path type="path" class="OfficeIconColors_m22" d="M 1198 639 h -194 l -126 511 q -62 249 -133 421 q -71 171 -150 277 q -79 106 -164 153 q -85 47 -175 47 q -30 0 -60 -9 q -30 -9 -54 -26 q -24 -17 -39 -42 q -15 -25 -15 -57 q 0 -22 10 -42 q 9 -21 26 -36 q 16 -15 38 -24 q 22 -9 46 -9 q 19 0 36 7 q 17 7 30 19 q 13 12 21 28 q 7 15 7 32 q 0 36 -30 63 q 33 0 66 -13 q 33 -14 64 -45 q 31 -31 59 -81 q 28 -50 51 -123 q 1 -8 6 -26 q 5 -18 15 -52 q 10 -34 25 -87 q 14 -53 34 -131 l 191 -755 h -217 l 26 -122 h 53 q 53 0 79 -3 q 26 -4 37 -8 q 7 -3 21 -9 q 13 -6 30 -18 q 16 -12 34 -31 q 17 -20 32 -50 q 33 -65 62 -113 q 29 -49 59 -85 q 86 -103 180 -151 q 93 -49 176 -49 q 45 0 82 14 q 37 14 64 36 q 26 22 41 50 q 14 28 14 56 q 0 24 -8 45 q -9 21 -24 37 q -15 15 -36 24 q -21 9 -46 9 q -44 0 -72 -26 q -29 -27 -29 -65 q 0 -12 5 -23 q 4 -11 9 -20 q 5 -10 10 -19 q 4 -9 4 -16 q -7 -5 -24 -5 q -70 0 -126 54 q -56 54 -101 151 q -6 13 -13 27 q -7 14 -16 37 q -10 23 -22 59 q -13 36 -30 92 h 195 m 488 514 q -49 40 -119 160 q 19 80 33 137 q 13 56 23 96 q 9 39 15 64 q 6 24 11 39 q 4 14 8 21 q 3 7 7 11 q 7 0 20 -10 q 13 -11 29 -29 q 15 -19 32 -43 q 17 -25 32 -52 l 76 39 q -26 50 -59 95 q -33 44 -68 78 q -35 34 -68 54 q -34 20 -61 20 q -22 0 -50 -13 q -28 -13 -51 -56 q -3 -5 -7 -17 q -4 -12 -11 -38 q -8 -27 -19 -70 q -11 -44 -27 -112 q -54 89 -97 148 q -43 59 -79 94 q -37 35 -69 50 q -33 14 -65 14 q -20 0 -39 -7 q -20 -7 -36 -20 q -17 -13 -27 -32 q -10 -19 -10 -44 q 0 -38 26 -65 q 26 -28 64 -28 q 17 0 30 6 q 12 5 23 13 q 11 7 22 16 q 10 8 23 13 q 30 -25 60 -62 q 29 -37 56 -77 q 27 -41 50 -81 q 22 -41 38 -73 q -18 -70 -28 -111 q -11 -42 -17 -64 q -6 -23 -8 -30 q -3 -8 -3 -9 q -9 -25 -19 -42 q -10 -17 -24 -27 q -14 -10 -34 -14 q -20 -4 -50 -4 q -9 0 -23 1 q -14 0 -46 2 v -80 l 269 -47 q 25 27 42 47 q 16 19 28 41 q 12 22 23 53 q 10 31 24 82 l 46 -69 q 22 -34 51 -62 q 29 -28 59 -48 q 29 -20 58 -31 q 28 -12 49 -12 q 47 0 79 27 q 31 27 31 68 q 0 27 -8 45 q -9 17 -23 28 q -14 11 -31 16 q -17 4 -33 4 q -13 0 -25 -3 q -12 -4 -23 -8 q -12 -4 -23 -7 q -12 -4 -24 -4 q -2 0 -10 3 q -8 3 -23 16 z">
+                    </path>
+                </svg>
+            </div>
+            <input class="formula_input" placeholder="Type" type="text" />
+        </div>
+        <div class="data_container">
+        </div>
+        <div class="sheetBar">
+            <svg name="arrows" id="prev" class="icon icon-arrow" viewBox="0 0 32 32">
+                <path d="M20 7l-9 9 9 9v-18z"></path>
+            </svg>
+            <svg name="arrows" id="next" class="icon icon-arrow" viewBox="0 0 32 32">
+                <path d="M12 25l9-9-9-9v18z"></path>
+            </svg>
+            <div class="sheets">
+                <div no="1" class="sheetno sheet_selected">
+                    Sheet 1
+                </div>
+            </div>
+            <svg class="icon icon-circle" viewBox="0 0 32 32">
+                <path stroke-width="2" stroke-miterlimit="10" stroke-linecap="butt" stroke-linejoin="miter" d="M28 16c0-6.625-5.375-12-12-12s-12 5.375-12 12 5.375 12 12 12 12-5.375 12-12z"></path>
+                <path stroke-width="2" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M16 11v10M21 16h-10"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="fileDrawer">
+        <div class="left_Section">
+            <svg class="item_icons icon_leftArrow" viewBox="0 0 32 32">
+                <path d="M16 32c8.836 0 16-7.164 16-16s-7.164-16-16-16c-8.836 0-16 7.164-16 16s7.164 16 16 16zM16 3c7.18 0 13 5.82 13 13s-5.82 13-13 13c-7.18 0-13-5.82-13-13s5.82-13 13-13z"></path>
+                <path d="M15 8l-8 8 8 8 3-3-3-3h9v-4h-9l3-3z"></path>
+            </svg>
+            <div class="items new">
+                <svg class="icon item_icons" viewBox="0 0 32 32">
+                    <path d="M28.682 7.158c-0.694-0.946-1.662-2.054-2.724-3.116s-2.17-2.030-3.116-2.724c-1.612-1.182-2.394-1.318-2.842-1.318h-15.5c-1.378 0-2.5 1.122-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.136-1.23-1.318-2.842zM24.542 5.458c0.96 0.96 1.712 1.824 2.268 2.542h-4.812v-4.81c0.718 0.556 1.584 1.308 2.542 2.268zM28 29.5c0 0.272-0.228 0.5-0.5 0.5h-23c-0.27 0-0.5-0.228-0.5-0.5v-27c0-0.27 0.23-0.5 0.5-0.5 0 0 15.498 0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+                </svg>
+                New
+            </div>
+            <div class="items open">
+                <svg class="icon item_icons" viewBox="0 0 29 28">
+                    <path d="M29.359 14.875c0 0.375-0.234 0.75-0.484 1.031l-5.25 6.188c-0.906 1.062-2.75 1.906-4.125 1.906h-17c-0.562 0-1.359-0.172-1.359-0.875 0-0.375 0.234-0.75 0.484-1.031l5.25-6.188c0.906-1.062 2.75-1.906 4.125-1.906h17c0.562 0 1.359 0.172 1.359 0.875zM24 9.5v2.5h-13c-1.953 0-4.375 1.109-5.641 2.609l-5.344 6.281c0-0.125-0.016-0.266-0.016-0.391v-15c0-1.922 1.578-3.5 3.5-3.5h5c1.922 0 3.5 1.578 3.5 3.5v0.5h8.5c1.922 0 3.5 1.578 3.5 3.5z"></path>
+                </svg>
+                Open
+            </div>
+            <div class="items save">
+                <svg class="icon item_icons" viewBox="0 0 32 32">
+                    <path d="M22 8h7.254c-0.156-0.252-0.344-0.532-0.572-0.842-0.694-0.946-1.662-2.054-2.724-3.116s-2.17-2.030-3.116-2.724c-0.31-0.228-0.59-0.416-0.842-0.572v7.254z"></path>
+                    <path d="M21 10c-0.552 0-1-0.448-1-1v-9h-15.5c-1.378 0-2.5 1.122-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5h-9zM16 13l7 7h-5v10h-4v-10h-5l7-7z"></path>
+                </svg>
+                Save
+            </div>
+        </div>
+        <div class="right_Section"></div>
+    </div>
+    <div class="modal modal_remove">
+        <input class="input" placeholder="Enter the name of the file" />
+        <button class="save_file">Save</button>
+    </div>
+    <div class="overlay"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="./stack.js"></script>
+    <script src="./formula.js"></script>
+</body>
+
+</html>
